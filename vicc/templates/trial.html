@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <!-- Combined form for entering stock symbol and searching -->
+    <form method="post" class="mb-3">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            <label for="stock_symbol" class="input-group-text">Enter Stock Symbol:</label>
+            <input type="text" id="stock_symbol" name="stock_symbol" class="form-control" required>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+
+<!-- Display stock name and other information below this form -->
+<!-- Add placeholders or divs to display the stock information dynamically -->
+<div id="stock_info">
+    {{stock_name|safe}}
+    {{stock_last_quote}}
+</div>
